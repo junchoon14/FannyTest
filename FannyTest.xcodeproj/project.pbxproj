@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BCB414C42115375200F5D6A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB414C32115375200F5D6A2 /* AppDelegate.swift */; };
-		BCB414C62115375200F5D6A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB414C52115375200F5D6A2 /* ViewController.swift */; };
 		BCB414C92115375200F5D6A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB414C72115375200F5D6A2 /* Main.storyboard */; };
 		BCB414CB2115375500F5D6A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB414CA2115375500F5D6A2 /* Assets.xcassets */; };
 		BCB414CE2115375500F5D6A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB414CC2115375500F5D6A2 /* LaunchScreen.storyboard */; };
+		BCB414D7211537F900F5D6A2 /* mutipleChoiceQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB414D5211537F900F5D6A2 /* mutipleChoiceQuestionViewController.swift */; };
+		BCB414D8211537F900F5D6A2 /* shortAnswerQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB414D6211537F900F5D6A2 /* shortAnswerQuestionViewController.swift */; };
+		BCB414DA211578A700F5D6A2 /* questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB414D9211578A700F5D6A2 /* questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BCB414C02115375200F5D6A2 /* FannyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FannyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB414C32115375200F5D6A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BCB414C52115375200F5D6A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BCB414C82115375200F5D6A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCB414CA2115375500F5D6A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCB414CD2115375500F5D6A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCB414CF2115375500F5D6A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCB414D5211537F900F5D6A2 /* mutipleChoiceQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mutipleChoiceQuestionViewController.swift; sourceTree = "<group>"; };
+		BCB414D6211537F900F5D6A2 /* shortAnswerQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shortAnswerQuestionViewController.swift; sourceTree = "<group>"; };
+		BCB414D9211578A700F5D6A2 /* questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +58,10 @@
 		BCB414C22115375200F5D6A2 /* FannyTest */ = {
 			isa = PBXGroup;
 			children = (
+				BCB414D5211537F900F5D6A2 /* mutipleChoiceQuestionViewController.swift */,
+				BCB414D6211537F900F5D6A2 /* shortAnswerQuestionViewController.swift */,
+				BCB414D9211578A700F5D6A2 /* questions.swift */,
 				BCB414C32115375200F5D6A2 /* AppDelegate.swift */,
-				BCB414C52115375200F5D6A2 /* ViewController.swift */,
 				BCB414C72115375200F5D6A2 /* Main.storyboard */,
 				BCB414CA2115375500F5D6A2 /* Assets.xcassets */,
 				BCB414CC2115375500F5D6A2 /* LaunchScreen.storyboard */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCB414C62115375200F5D6A2 /* ViewController.swift in Sources */,
+				BCB414D7211537F900F5D6A2 /* mutipleChoiceQuestionViewController.swift in Sources */,
+				BCB414DA211578A700F5D6A2 /* questions.swift in Sources */,
+				BCB414D8211537F900F5D6A2 /* shortAnswerQuestionViewController.swift in Sources */,
 				BCB414C42115375200F5D6A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
