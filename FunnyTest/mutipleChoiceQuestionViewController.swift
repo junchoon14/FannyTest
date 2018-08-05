@@ -12,11 +12,12 @@ class mutipleChoiceQuestionViewController: UIViewController {
     
     var yPosition = [449, 499, 549, 599]
     var newPosition = [Int]()
-    var num = 0
+    var num: Int = 0
     var pickChoiceQuestions = [multipleChoiceQuestions]()
     var score: Int = 0
     var timer: Timer?
-    var sec: Int = 6
+    var labelTimer: Timer?
+    var sec: Int = 5
     
     @IBOutlet weak var questionNumberLabel: UITextField!
     @IBOutlet weak var multipleChoiceQuestionLabel: UILabel!
@@ -29,6 +30,7 @@ class mutipleChoiceQuestionViewController: UIViewController {
     
     @IBAction func choiceButtonClick(_ sender: UIButton) {
         if num < 9 {
+            //若答案正確，加十分
             if sender.tag == pickChoiceQuestions[num].rightAnswer {
                 score += 10
             }
@@ -36,17 +38,21 @@ class mutipleChoiceQuestionViewController: UIViewController {
             questionNumberLabel.text = "第 \(num + 1) 題"
             displayContent()
             buttonRandomPosition()
-            
+        //程式結束
         } else if num == 9 {
+            if self.timer != nil {
+                self.timer!.invalidate()
+                self.labelTimer!.invalidate()
+            }
             multipleChoiceQuestionLabel.text = "你得到\(score)分"
             buttonOff()
             retryButton.isHidden = false
             num = 0
-            timer!.invalidate()
         }
     }
     
     @IBAction func retryButtonClick(_ sender: UIButton) {
+        num = 0
         questionNumberLabel.text = "第 \(num + 1) 題"
         randomQuestion()
         buttonOn()
@@ -66,15 +72,13 @@ class mutipleChoiceQuestionViewController: UIViewController {
         multipleChoiceQuestionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         multipleChoiceQuestionLabel.numberOfLines = 0
         displayContent()
-        print(pickChoiceQuestions)
-        print("-------------------------------")
         countDownTimer()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        // 將timer的執行緒停止
         if self.timer != nil {
-            self.timer?.invalidate()
+            self.timer!.invalidate()
+            self.labelTimer!.invalidate()
         }
     }
     
@@ -115,12 +119,11 @@ class mutipleChoiceQuestionViewController: UIViewController {
     }
     
     func countDownTimer() {
-        //timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.nextQustion), userInfo: nil, repeats: true)
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (_) in
             self.nextQustion()
             self.sec = 6
         }
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
+        labelTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
             self.sec -= 1
             self.countDownTimerLabel.text = "剩下\(self.sec)秒"
         }
@@ -134,11 +137,14 @@ class mutipleChoiceQuestionViewController: UIViewController {
             buttonRandomPosition()
             
         } else if num == 9 {
+            if self.timer != nil {
+                self.timer!.invalidate()
+                self.labelTimer!.invalidate()
+            }
             multipleChoiceQuestionLabel.text = "你得到\(score)分"
             buttonOff()
             retryButton.isHidden = false
             num = 0
-            timer!.invalidate()
         }
     }
     
